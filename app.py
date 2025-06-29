@@ -12,7 +12,8 @@ load_dotenv()
 
 # --- Configuration ---
 DB_NAME = 'burger_king.db'
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+# GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
 
 if not GEMINI_API_KEY:
     st.error("Gemini API Key not found. Please set GEMINI_API_KEY in your .env file.")
