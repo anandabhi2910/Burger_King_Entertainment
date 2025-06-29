@@ -5,7 +5,7 @@ import os
 from dotenv import load_dotenv
 import random
 import json # New import for JSON parsing
-from create_db import create_tables, add_sample_data
+from create_db import create_and_populate_db
 
 # Load environment variables from .env file
 load_dotenv()
@@ -23,8 +23,7 @@ MODEL_NAME = 'gemini-1.5-flash-latest' # Using the model you confirmed works
 model = genai.GenerativeModel(MODEL_NAME)
 
 # --- Add Database Initialization Calls HERE ---
-create_tables()
-add_sample_data()
+create_and_populate_db()
 
 # --- Burger Stack Game Configuration ---
 WHOOPER_RECIPE = [
